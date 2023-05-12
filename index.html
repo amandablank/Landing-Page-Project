@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stardew Valley</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: black;
+        margin-top: 20px;
+      }
+
+      .bg-day .border {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 30px;
+        margin: 0 auto;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+
+      .bg-night .border {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        padding: 30px;
+        margin: 0 auto;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+
+      .container {
+        font-family: "Press Start 2P", cursive;
+        max-width: 800px;
+        margin: 26px auto;
+      }
+
+      .paragraph {
+        margin-top: 30px;
+        font-size: 12px;
+        text-align: justify;
+        line-height: 1.8;
+      }
+
+      .bg-day {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/072/011/original/stardew-valley-day.jpg?1678962141");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .bg-night {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/072/003/original/stardew-valley-night.jpg?1678957874");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .change-theme-div {
+        display: block;
+        text-align: center;
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+
+      .btn-day {
+        padding: 10px;
+        background-color: #000000;
+        border: #172834;
+        border-radius: 3px;
+        font-size: 20px;
+      }
+
+      .btn-night {
+        padding: 10px;
+        background-color: #5e8df1;
+        border: #172834;
+        border-radius: 3px;
+        font-size: 20px;
+      }
+
+      .day-theme {
+        color: #000000;
+      }
+
+      .night-theme {
+        color: gold;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        margin-top: 25px;
+        margin-bottom: 50px;
+      }
+
+      .grid img {
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+        aspect-ratio: 1/0.7;
+      }
+
+      .grid img:hover {
+        transform: scale(2);
+        transition: all 350ms ease-in-out;
+      }
+
+      .bg-day .wikipedia-link {
+        text-decoration: none;
+        border: 4px dotted black;
+        background: rgba(20, 142, 251, 0.3);
+        padding: 8px;
+        color: black;
+        font-size: 24px;
+        margin: 70px auto;
+        display: block;
+        text-align: center;
+      }
+
+      .bg-day .wikipedia-link:hover {
+        text-decoration: none;
+        border: 4px dotted rgba(20, 142, 251);
+        background: rgb(0, 0, 0);
+        padding: 8px;
+        color: rgba(20, 142, 251);
+        font-size: 24px;
+        display: block;
+        text-align: center;
+        transition: all 180ms ease-in-out;
+      }
+
+      .bg-night .wikipedia-link {
+        text-decoration: none;
+        border: 4px dotted gold;
+        background: #24203b;
+        padding: 8px;
+        color: gold;
+        font-size: 24px;
+        margin: 70px auto;
+        display: block;
+        text-align: center;
+      }
+
+      .bg-night .wikipedia-link:hover {
+        text-decoration: none;
+        border: 4px dotted #24203b;
+        background: gold;
+        padding: 8px;
+        color: #24203b;
+        font-size: 24px;
+        display: block;
+        text-align: center;
+      }
+
+      .footer {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
+      .bg-day .footer a {
+        text-decoration: none;
+        color: rgb(184, 64, 120);
+      }
+
+      .bg-night .footer a {
+        text-decoration: none;
+        color: rgb(102, 247, 240);
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      .stardew-valley-intro {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 30px;
+      }
+
+      .stardew-valley-intro:hover {
+        transform: scale(1.2);
+        transition: all 300ms ease-in-out;
+      }
+
+      .title {
+        font-size: 60px;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: 600px) {
+        .title {
+          font-size: 40px;
+          text-align: center;
+        }
+      }
+
+      @media (min-width: 900px) {
+        .title {
+          font-size: 60px;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <div class="container">
+    <body class="bg-day day-theme">
+      <div class="border">
+        <h1 class="title">Stardew Valley</h1>
+        <div class="change-theme-div">
+          <button class="btn-day">🌃🌙</button>
+        </div>
+        <div>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/072/006/original/stardew-valley-crops.jpg?1678958395"
+            alt="stardew-valley-crops"
+            class="stardew-valley-intro"
+          />
+          <div class="grid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/072/007/original/stardew-valley-fishing.jpg?1678958408"
+              alt="stardew-valley-fishing"
+            />
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/072/737/original/stardew-valley-livestock.jpg?1679315153"
+              alt="stardew-valley-livestock"
+            />
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/072/010/original/stardew-valley-mine.jpg?1678958781"
+              alt="stardew-valley-mine"
+            />
+          </div>
+        </div>
+        <div class="paragraph">
+          <p>
+            Stardew Valley is a simulation role-playing video game developed by
+            Eric "ConcernedApe" Barone. Players take the role of a character who
+            inherits their deceased grandfather's dilapidated farm in a place
+            known as Stardew Valley. The game was released for Windows in
+            February 2016 before being ported to other platforms.
+          </p>
+          <br />
+          <p>
+            Stardew Valley is open-ended, allowing players to grow crops, raise
+            livestock, fish, cook, mine, forage, and socialize with the
+            townspeople, including the ability to marry and have children. It
+            allows up to four players to play online together.
+          </p>
+        </div>
+        <div class="about">
+          <a
+            class="wikipedia-link"
+            href="https://en.wikipedia.org/wiki/Stardew_Valley"
+            target="_blank"
+            >Learn more</a
+          >
+        </div>
+        <div class="footer">
+          <footer>
+            Coded with
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/072/016/original/junimo-animated.gif?1678967437"
+              alt="junimo-gif"
+            />
+            by
+            <p>
+              <a
+                href="https://www.linkedin.com/in/amanda-cristina-blankenburg-81b410213/"
+                target="_blank"
+                >Amanda Cristina Blankenburg</a
+              >
+            </p>
+          </footer>
+        </div>
+      </div>
+    </body>
+  </div>
+  <script>
+    function changeTheme() {
+      let body = document.querySelector("body");
+
+      if (body.classList.contains("bg-day")) {
+        body.classList.remove("bg-day");
+        body.classList.remove("day-theme");
+        body.classList.add("bg-night");
+        body.classList.add("night-theme");
+      } else {
+        body.classList.remove("bg-night");
+        body.classList.remove("night-theme");
+        body.classList.add("bg-day");
+        body.classList.add("day-theme");
+      }
+
+      let button = document.querySelector("button");
+
+      if (button.classList.contains("btn-day")) {
+        button.classList.remove("btn-day");
+        button.classList.add("btn-night");
+        button.innerHTML = "🌄⛅";
+      } else {
+        button.classList.add("btn-day");
+        button.classList.remove("btn-night");
+        button.innerHTML = "🌃🌙";
+      }
+    }
+    let button = document.querySelector("button");
+    button.addEventListener("click", changeTheme);
+  </script>
+</html>
